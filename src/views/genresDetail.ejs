@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> <%= genres.name %> </title>
+    <link rel='stylesheet' href='/css/style.css' />
+
+</head>
+<body>
+    <figure>
+        <a href="/"><img src="/img/logo-DH.png" alt="Logo Digital House"></a> 
+    </figure>    
+
+    <h1><%= genres.name %> </h1>
+    <br>
+    
+    <p>NAME: <%= genres.name %> </p>
+    <p>RANKIG: <%= genres.ranking %> </p>
+
+    <% if (genres.movies.length) { %>
+        <ul>
+            <% genres.movies.forEach(movie => { %>
+             <li><a href="/movies/datail/<%= movie.id %>"><%= movie.title %></a></li>
+            <% }) %>
+        </ul>
+        <% }else{ %>
+          <p>El genero no tiene peliculas</p>
+        <% } %> 
+        
+
+
+    <br>
+
+    <p><a href="/genres">Listado de Generos</a></p>
+
+</body>
+</html>
